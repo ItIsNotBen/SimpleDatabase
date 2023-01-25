@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.logging.FileHandler;
+import java.io.IOException;
 
 public class Database {
 
@@ -29,6 +32,19 @@ public class Database {
 
     // return the number of records in the database
     public int getRecordCount() {
+
+        try {
+        BufferedReader br = new BufferedReader(new FileReader("text.txt") != null));
+        int count = 0;
+        while (br.readLine() != null) {
+            count++;
+        }
+            return count;
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return 0; // TODO: replace this placeholder code
     }
 
@@ -37,5 +53,4 @@ public class Database {
     public boolean findRecord(String data) {
         return false; // TODO: replace this placeholder code
     }
-
 }
